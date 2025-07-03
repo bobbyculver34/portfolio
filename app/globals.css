@@ -1,0 +1,481 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 271 81% 56%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 270 3% 95%;
+    --secondary-foreground: 270 5% 15%;
+    --muted: 270 3% 95%;
+    --muted-foreground: 270 4% 46%;
+    --accent: 270 3% 95%;
+    --accent-foreground: 270 5% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 270 3% 91%;
+    --input: 270 3% 91%;
+    --ring: 271 81% 56%;
+    --radius: 0.75rem;
+    --chart-1: 271 81% 56%;
+    --chart-2: 280 100% 70%;
+    --chart-3: 260 100% 80%;
+    --chart-4: 290 84% 60%;
+    --chart-5: 250 75% 60%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 270 20% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 270 20% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 270 20% 98%;
+    --primary: 271 81% 56%;
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 270 20% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 270 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 270 20% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 271 81% 56%;
+    --chart-1: 271 81% 56%;
+    --chart-2: 280 100% 70%;
+    --chart-3: 260 100% 80%;
+    --chart-4: 290 84% 60%;
+    --chart-5: 250 75% 60%;
+  }
+
+  .high-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 20%;
+    --accent: 0 0% 85%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 100% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 0%;
+    --chart-1: 0 0% 0%;
+    --chart-2: 0 0% 30%;
+    --chart-3: 0 0% 50%;
+    --chart-4: 0 0% 70%;
+    --chart-5: 0 0% 40%;
+  }
+
+  /* High contrast dark variant for users who prefer dark backgrounds */
+  .high-contrast.dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 5%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 0%;
+    --border: 0 0% 100%;
+    --input: 0 0% 0%;
+    --ring: 0 0% 100%;
+    --chart-1: 0 0% 100%;
+    --chart-2: 0 0% 70%;
+    --chart-3: 0 0% 50%;
+    --chart-4: 0 0% 30%;
+    --chart-5: 0 0% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* High Contrast Mode Specific Styles */
+.high-contrast {
+  /* Ensure all text has maximum contrast */
+  --tw-prose-body: hsl(var(--foreground));
+  --tw-prose-headings: hsl(var(--foreground));
+  --tw-prose-lead: hsl(var(--foreground));
+  --tw-prose-links: hsl(var(--primary));
+  --tw-prose-bold: hsl(var(--foreground));
+  --tw-prose-counters: hsl(var(--foreground));
+  --tw-prose-bullets: hsl(var(--foreground));
+  --tw-prose-hr: hsl(var(--border));
+  --tw-prose-quotes: hsl(var(--foreground));
+  --tw-prose-quote-borders: hsl(var(--border));
+  --tw-prose-captions: hsl(var(--foreground));
+  --tw-prose-code: hsl(var(--foreground));
+  --tw-prose-pre-code: hsl(var(--foreground));
+  --tw-prose-pre-bg: hsl(var(--muted));
+  --tw-prose-th-borders: hsl(var(--border));
+  --tw-prose-td-borders: hsl(var(--border));
+}
+
+/* High contrast button styles */
+.high-contrast .purple-gradient {
+  background: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+.high-contrast .purple-gradient-subtle {
+  background: hsl(var(--muted)) !important;
+  border: 2px solid hsl(var(--border)) !important;
+}
+
+.high-contrast .hero-gradient-bg {
+  background: hsl(var(--background)) !important;
+}
+
+/* High contrast card styles */
+.high-contrast .project-card,
+.high-contrast .skills-card {
+  border: 2px solid hsl(var(--border)) !important;
+  background: hsl(var(--card)) !important;
+}
+
+.high-contrast .featured-project {
+  border: 3px solid hsl(var(--primary)) !important;
+  background: hsl(var(--card)) !important;
+}
+
+.high-contrast .featured-project::before {
+  display: none;
+}
+
+/* High contrast progress bars */
+.high-contrast .progress-bar,
+.high-contrast [data-progress-background] {
+  background: hsl(var(--primary)) !important;
+}
+
+/* High contrast focus indicators */
+.high-contrast *:focus-visible {
+  outline: 3px solid hsl(var(--ring)) !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast link styles */
+.high-contrast a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 2px !important;
+}
+
+.high-contrast a:hover {
+  text-decoration-thickness: 3px !important;
+}
+
+/* CSS Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmerLoading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Loading Skeleton Animation */
+.loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--muted-foreground) / 0.1) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200px 100%;
+  animation: shimmerLoading 1.5s infinite;
+}
+
+/* Custom Project Card Styles */
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid hsl(var(--border));
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.15), 0 10px 10px -5px rgba(139, 92, 246, 0.1);
+}
+
+.featured-project {
+  position: relative;
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(271 81% 56% / 0.05) 100%);
+  border: 2px solid hsl(var(--primary));
+}
+
+.featured-project::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.featured-project:hover {
+  box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.3);
+  border-color: hsl(271 81% 56%);
+}
+
+/* Custom Progress Bar Styles */
+.progress-bar {
+  background: linear-gradient(90deg, hsl(271 81% 56%) 0%, hsl(280 100% 70%) 100%);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Enhanced Card Hover Effects */
+.project-card .card-content {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .card-content {
+  transform: translateY(-2px);
+}
+
+/* Badge Hover Animation */
+.project-card .badge {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.project-card .badge:hover {
+  transform: scale(1.05);
+}
+
+/* Purple Gradient Backgrounds */
+.purple-gradient {
+  background: linear-gradient(135deg, hsl(271 81% 56%) 0%, hsl(280 100% 70%) 50%, hsl(260 100% 80%) 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.purple-gradient-subtle {
+  background: linear-gradient(135deg, hsl(271 81% 56% / 0.1) 0%, hsl(280 100% 70% / 0.1) 100%);
+}
+
+/* Hero Section Purple Enhancements */
+.hero-gradient-bg {
+  background: linear-gradient(135deg, hsl(271 81% 56% / 0.1) 0%, hsl(280 100% 70% / 0.05) 50%, transparent 100%);
+}
+
+/* Skills Section Purple Styling */
+.skills-card {
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(271 81% 56% / 0.02) 100%);
+  border: 1px solid hsl(271 81% 56% / 0.1);
+}
+
+.skills-card:hover {
+  border-color: hsl(271 81% 56% / 0.3);
+  box-shadow: 0 10px 25px -5px hsl(271 81% 56% / 0.1);
+}
+
+/* Image Loading States */
+.image-loading {
+  background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--primary) / 0.1) 50%, hsl(var(--muted)) 75%);
+  background-size: 200px 100%;
+  animation: shimmerLoading 1.5s infinite;
+}
+
+/* High contrast hover states */
+.high-contrast .project-card:hover {
+  box-shadow: 0 4px 8px 0 hsl(var(--foreground) / 0.3) !important;
+  transform: translateY(-4px);
+}
+
+.high-contrast .featured-project:hover {
+  box-shadow: 0 6px 12px 0 hsl(var(--primary) / 0.5) !important;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .high-contrast * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode announcements for screen readers */
+.high-contrast::before {
+  content: "High contrast mode enabled";
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
