@@ -13,7 +13,7 @@ export function HeroSection() {
               <div className="mb-6">
                 <p className="text-primary font-medium mb-2 animate-fadeInUp">👋 Hello, I'm</p>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4 animate-fadeInUp animate-delay-100">
-                  Gregory Jones Mazda
+                  Gregory Jones
                 </h1>
                 <h2 className="text-2xl sm:text-3xl text-muted-foreground mb-6 animate-fadeInUp animate-delay-200">
                   Senior AI/ML Engineer
